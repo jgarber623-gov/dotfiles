@@ -1,4 +1,4 @@
-zsh__homebrew_packages:
+zsh__apt_packages:
   - zsh
 
 zsh__config_path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"

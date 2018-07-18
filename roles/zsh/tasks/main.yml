@@ -1,11 +1,11 @@
-- import_tasks: ../common/tasks/homebrew.yml
+- import_tasks: ../common/tasks/apt.yml
   vars:
-    packages: "{{ zsh__homebrew_packages }}"
+    packages: "{{ zsh__apt_packages }}"
 
 - name: Change shell to ZSH
   user:
     name: "{{ ansible_user }}"
-    shell: /usr/local/bin/zsh
+    shell: /bin/zsh
   become: yes
 
 - name: Install oh-my-zsh
