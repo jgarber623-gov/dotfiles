@@ -1,4 +1,4 @@
-git__homebrew_packages:
+git__apt_packages:
   - git
 
 git__linked_files:

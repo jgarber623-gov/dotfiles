@@ -1,6 +1,6 @@
-- import_tasks: ../common/tasks/homebrew.yml
+- import_tasks: ../common/tasks/apt.yml
   vars:
-    packages: "{{ git__homebrew_packages }}"
+    packages: "{{ git__apt_packages }}"
 
 - import_tasks: ../common/tasks/link-config-files.yml
   vars:
