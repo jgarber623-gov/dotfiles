@@ -1,4 +1,13 @@
-node__homebrew_packages:
+node__apt_signing_keys:
+  - https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+
+node__apt_repositories:
+  - repo: deb https://deb.nodesource.com/node_8.x stretch main
+    filename: nodesource
+  - repo: deb-src https://deb.nodesource.com/node_8.x stretch main
+    filename: nodesource
+
+node__apt_packages:
   - node
   - yarn
 

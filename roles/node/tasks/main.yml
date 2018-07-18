@@ -1,6 +1,19 @@
-- import_tasks: ../common/tasks/homebrew.yml
+- name: Add APT signing keys
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items: "{{ node__apt_signing_keys }}"
+
+- name: Add APT repositories
+  apt_repository:
+    repo: "{{ item.repo }}"
+    filename: "{{ item.filename }}"
+    state: present
+  with_items: "{{ node__apt_repositories }}"
+
+- import_tasks: ../common/tasks/apt.yml
   vars:
-    packages: "{{ node__homebrew_packages }}"
+    packages: "{{ node__apt_packages }}"
 
 - name: Install packages with npm
   npm:
