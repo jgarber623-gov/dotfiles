@@ -4,7 +4,14 @@ This is how I work.
 
 ## Installation
 
-Clone this repository and run the following commands:
+First, make sure that Python is installed:
+
+```sh
+sudo apt update
+sudo apt install python python-dev python-setuptools
+```
+
+Then, clone this repository and run the following commands:
 
 ```sh
 git clone -b pixelbook git@github.com:jgarber623-gov/dotfiles ~/.dotfiles
