@@ -3,6 +3,7 @@
     url: "{{ item }}"
     state: present
   with_items: "{{ node__apt_signing_keys }}"
+  become: yes
 
 - name: Add APT repositories
   apt_repository:
@@ -10,6 +11,7 @@
     filename: "{{ item.filename }}"
     state: present
   with_items: "{{ node__apt_repositories }}"
+  become: yes
 
 - import_tasks: ../common/tasks/apt.yml
   vars:
@@ -19,6 +21,7 @@
   npm:
     name: "{{ item }}"
     global: yes
+    path: "{{ lookup('env', 'HOME') }}/.node_modules"
   with_items: "{{ node__npm_packages }}"
 
 - import_tasks: ../common/tasks/link-config-files.yml

@@ -14,7 +14,7 @@ ruby__apt_packages:
 ruby__bundler_config_path: "{{ lookup('env', 'HOME') }}/.bundle"
 
 ruby__rbenv_config:
-  path: "{{ lookup('env', 'HOME' }}/.rbenv"
+  path: "{{ lookup('env', 'HOME') }}/.rbenv"
   repo: https://github.com/rbenv/rbenv
   plugins:
     - name: ruby-build
@@ -26,7 +26,7 @@ ruby__linked_files:
   - .bundle/config
   - .gemrc
 
-ruby__default_gems_config: "{{ ruby__rbenv_config_path }}/default-gems"
+ruby__default_gems_config: "{{ ruby__rbenv_config.path }}/default-gems"
 
 ruby__default_gems:
   - bundler
