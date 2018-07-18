@@ -1,6 +1,6 @@
-- import_tasks: ../common/tasks/homebrew.yml
+- import_tasks: ../common/tasks/apt.yml
   vars:
-    packages: "{{ ruby__homebrew_packages }}"
+    packages: "{{ ruby__apt_packages }}"
 
 - name: Create config paths
   file:
@@ -8,7 +8,24 @@
     state: directory
   with_items:
     - "{{ ruby__bundler_config_path }}"
-    - "{{ ruby__rbenv_config_path }}"
+    - "{{ ruby__rbenv_config.path }}"
+
+- name: Install rbenv
+  git:
+    repo: "{{ ruby__rbenv_config.repo }}"
+    dest: "{{ ruby__rbenv_config.path }}"
+
+- name: Create rbenv plugins folder
+  file:
+    path: "{{ ruby__rbenv_config.path }}/plugins"
+    state: directory
+  register: ruby__rbenv_plugins_config
+
+- name: Install rbenv plugins
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ ruby__rbenv_plugins_config.path }}/{{ item.name }}"
+  with_items: "{{ ruby__rbenv_config.plugins }}"
 
 - import_tasks: ../common/tasks/link-config-files.yml
   vars:
@@ -20,9 +37,9 @@
     dest: "{{ ruby__default_gems_config }}"
 
 - name: Install Ruby versions
-  command: rbenv install {{ item }}
-  args:
-    creates: "{{ ruby__rbenv_config_path }}/versions/{{ item }}"
+  shell: "{{ ansible_env.SHELL }} -lc '{{ ruby__rbenv_config.path }}/bin/rbenv install --skip-existing {{ item }}'"
+  register: ruby__install_ruby_result
+  changed_when: ruby__install_ruby_result.stdout != ''
   with_items: "{{ ruby__versions }}"
 
 - name: Set global Ruby version
