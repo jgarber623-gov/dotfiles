@@ -1,19 +1,13 @@
-# jgarber623's dotfiles
+# jgarber623-gov's dotfiles
 
 This is how I work.
 
 ## Installation
 
-First, open up Terminal.app and install Xcode Command Line Tools:
+Clone this repository and run the following commands:
 
 ```sh
-xcode-select --install
-```
-
-Then, clone this repository and run the following commands:
-
-```sh
-git clone -b macbook-pro git@github.com:jgarber623/dotfiles ~/.dotfiles
+git clone -b pixelbook git@github.com:jgarber623-gov/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 make bootstrap
 make provision
