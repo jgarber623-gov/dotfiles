@@ -2,7 +2,6 @@
   core:
     customFileTypes:
       "source.json": [
-        "remarkrc"
         "sonarwhalrc"
       ]
       "source.nginx": [
@@ -48,7 +47,7 @@
     packagesWithKeymapsDisabled: [
       "emmet"
     ]
-    projectHome: "/Users/jason/Developer"
+    projectHome: "/home/jason/Developer"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -56,7 +55,7 @@
     ]
     titleBar: "custom-inset"
   editor:
-    fontFamily: "Monaco"
+    fontFamily: "Cousine"
     lineHeight: 1.6
     scrollPastEnd: true
     showInvisibles: true

@@ -1,4 +1,11 @@
-atom__homebrew_cask_packages:
+atom__apt_signing_keys:
+  - https://packagecloud.io/AtomEditor/atom/gpgkey
+
+atom__apt_repositories:
+  - repo: deb https://packagecloud.io/AtomEditor/atom/any any main
+    filename: atom
+
+atom__apt_packages:
   - atom
 
 atom__config_path: "{{ lookup('env', 'HOME') }}/.atom"
