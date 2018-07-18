@@ -1,13 +1,10 @@
-- name: macOS Playbook
+- name: Pixelbook Playbook
   hosts: localhost
   connection: local
   gather_facts: false
 
-- import_playbook: playbooks/homebrew.yml
 - import_playbook: playbooks/git.yml
 - import_playbook: playbooks/zsh.yml
 - import_playbook: playbooks/ruby.yml
 - import_playbook: playbooks/node.yml
 - import_playbook: playbooks/atom.yml
-- import_playbook: playbooks/homebrew-cask.yml
-- import_playbook: playbooks/mas.yml
