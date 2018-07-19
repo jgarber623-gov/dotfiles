@@ -1,5 +1,8 @@
 system__apt_packages:
+  - git
   - tmux
 
 system__linked_files:
+  - .gitconfig
+  - .gitignore
   - .tmux.conf

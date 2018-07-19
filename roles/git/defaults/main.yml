@@ -1,6 +1,0 @@
-git__apt_packages:
-  - git
-
-git__linked_files:
-  - .gitconfig
-  - .gitignore
