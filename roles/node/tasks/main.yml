@@ -1,21 +1,8 @@
-- name: Add APT signing keys
-  apt_key:
-    url: "{{ item }}"
-    state: present
-  with_items: "{{ node__apt_signing_keys }}"
-  become: yes
-
-- name: Add APT repositories
-  apt_repository:
-    repo: "{{ item.repo }}"
-    filename: "{{ item.filename }}"
-    state: present
-  with_items: "{{ node__apt_repositories }}"
-  become: yes
-
 - import_tasks: ../common/tasks/apt.yml
   vars:
     packages: "{{ node__apt_packages }}"
+    repositories: "{{ node__apt_repositories }}"
+    signing_keys: "{{ node__apt_signing_keys }}"
 
 - name: Install packages with npm
   npm:
