@@ -4,7 +4,7 @@ This is how I work.
 
 ## Installation
 
-First, make sure that Python is installed:
+First, make sure that the necessary dependencies are installed:
 
 ```sh
 sudo apt update
