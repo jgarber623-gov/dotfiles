@@ -1,6 +1,14 @@
 system__apt_packages:
+  - curl
   - git
+  - htop
+  - iputils-ping
+  - jq
+  - nano
+  - nmap
+  - pandoc
   - tmux
+  - wget
 
 system__linked_files:
   - .gitconfig
