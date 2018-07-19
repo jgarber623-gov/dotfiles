@@ -8,7 +8,7 @@ First, make sure that Python is installed:
 
 ```sh
 sudo apt update
-sudo apt install python python-dev python-setuptools
+sudo apt install build-essential python python-dev python-setuptools
 ```
 
 Then, clone this repository and run the following commands:
