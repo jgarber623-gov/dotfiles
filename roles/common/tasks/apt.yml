@@ -1,7 +1,25 @@
+- name: Add APT signing keys
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items: "{{ signing_keys }}"
+  when: signing_keys is defined
+  become: yes
+
+- name: Add APT repositories
+  apt_repository:
+    repo: "{{ item.repo }}"
+    filename: "{{ item.filename }}"
+    state: present
+  with_items: "{{ repositories }}"
+  when: repositories is defined
+  become: yes
+
 - name: Install packages with APT
   apt:
     name: "{{ item }}"
     state: latest
     update_cache: yes
   with_items: "{{ packages }}"
+  when: packages is defined
   become: yes
