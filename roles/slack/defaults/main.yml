@@ -1,0 +1,11 @@
+slack__apt_signing_keys:
+  - https://packagecloud.io/slacktechnologies/slack/gpgkey
+
+slack__apt_repositories:
+  - repo: deb https://packagecloud.io/slacktechnologies/slack/debian jessie main
+    filename: slack
+  - repo: deb-src https://packagecloud.io/slacktechnologies/slack/debian jessie main
+    filename: slack
+
+slack__apt_packages:
+  - slack-desktop

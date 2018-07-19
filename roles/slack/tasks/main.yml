@@ -1,0 +1,5 @@
+- import_tasks: ../common/tasks/apt.yml
+  vars:
+    packages: "{{ slack__apt_packages }}"
+    repositories: "{{ slack__apt_repositories }}"
+    signing_keys: "{{ slack__apt_signing_keys }}"
