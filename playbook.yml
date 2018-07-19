@@ -3,6 +3,7 @@
   connection: local
   gather_facts: false
 
+- import_playbook: playbooks/system.yml
 - import_playbook: playbooks/git.yml
 - import_playbook: playbooks/zsh.yml
 - import_playbook: playbooks/ruby.yml

@@ -1,0 +1,7 @@
+- import_tasks: ../common/tasks/apt.yml
+  vars:
+    packages: "{{ system__apt_packages }}"
+
+- import_tasks: ../common/tasks/link-config-files.yml
+  vars:
+    linked_files: "{{ system__linked_files }}"

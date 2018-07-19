@@ -1,0 +1,5 @@
+system__apt_packages:
+  - tmux
+
+system__linked_files:
+  - .tmux.conf
