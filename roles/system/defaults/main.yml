@@ -13,4 +13,5 @@ system__apt_packages:
 system__linked_files:
   - .gitconfig
   - .gitignore
+  - .remarkrc
   - .tmux.conf
