@@ -6,6 +6,7 @@
 - import_playbook: playbooks/system.yml
 - import_playbook: playbooks/zsh.yml
 - import_playbook: playbooks/atom.yml
+- import_playbook: playbooks/insomnia.yml
 - import_playbook: playbooks/slack.yml
 - import_playbook: playbooks/node.yml
 - import_playbook: playbooks/ruby.yml

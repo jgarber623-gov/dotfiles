@@ -1,0 +1,5 @@
+- import_tasks: ../common/tasks/apt.yml
+  vars:
+    packages: "{{ insomnia__apt_packages }}"
+    repositories: "{{ insomnia__apt_repositories }}"
+    signing_keys: "{{ insomnia__apt_signing_keys }}"
