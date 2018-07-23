@@ -12,3 +12,7 @@
 - import_tasks: ../common/tasks/link-config-files.yml
   vars:
     linked_files: "{{ system__linked_files }}"
+
+- name: Import Gnome Terminal settings
+  command: dconf load /org/gnome/terminal/ <<" EOF" {{ system__gnome_terminal_settings }} EOF
+  changed_when: false
