@@ -8,7 +8,7 @@ ruby__apt_packages:
   - zlib1g-dev
   - libncurses5-dev
   - libffi-dev
-  - libgdbm3
+  - libgdbm5
   - libgdbm-dev
 
 ruby__bundler_config_path: "{{ lookup('env', 'HOME') }}/.bundle"
