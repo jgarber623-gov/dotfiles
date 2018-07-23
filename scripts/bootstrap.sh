@@ -2,7 +2,7 @@
 
 if [[ ! `which pip` ]]; then
   echo '=> Installing pip...'
-  sudo easy_install pip
+  sudo apt install python-pip
 else
   echo '✓ pip already installed.'
 fi
