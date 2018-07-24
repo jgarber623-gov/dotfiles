@@ -1,7 +1,6 @@
 system__apt_packages:
   - curl
   - git
-  - gnome-terminal
   - htop
   - iputils-ping
   - jq
@@ -11,11 +10,8 @@ system__apt_packages:
   - tmux
   - wget
 
-system__applications_config_path: "{{ lookup('env', 'HOME') }}/.local/share/applications"
-
 system__linked_files:
   - .gitconfig
   - .gitignore
-  - .local/share/applications/gnome-terminal.desktop
   - .remarkrc
   - .tmux.conf
