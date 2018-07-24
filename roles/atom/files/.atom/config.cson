@@ -56,6 +56,7 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Cousine"
+    fontSize: 18
     lineHeight: 1.6
     scrollPastEnd: true
     showInvisibles: true
