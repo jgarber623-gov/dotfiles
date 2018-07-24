@@ -2,6 +2,13 @@
   vars:
     packages: "{{ system__apt_packages }}"
 
+- name: Create config paths
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ system__applications_config_path }}"
+
 - import_tasks: ../common/tasks/link-config-files.yml
   vars:
     linked_files: "{{ system__linked_files }}"
