@@ -1,5 +1,6 @@
 system__apt_packages:
   - curl
+  - dnsutils
   - git
   - gnome-terminal
   - htop
