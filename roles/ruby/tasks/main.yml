@@ -1,28 +1,47 @@
-- name: Install packages with Homebrew
-  homebrew:
-    name: "{{ item }}"
-    state: latest
-  with_items: "{{ ruby_homebrew_packages }}"
+- import_tasks: ../common/tasks/apt.yml
+  vars:
+    packages: "{{ ruby__apt_packages }}"
 
-- name: Link configuration files
+- name: Create config paths
   file:
-    src: "{{ role_path }}/files/{{ item }}"
-    dest: "~/{{ item }}"
-    state: link
-    force: yes
-  with_items: "{{ ruby_linked_files }}"
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ ruby__bundler_config_path }}"
+    - "{{ ruby__rbenv_config.path }}"
 
-- name: Write default-gems file
+- name: Install rbenv
+  git:
+    repo: "{{ ruby__rbenv_config.repo }}"
+    dest: "{{ ruby__rbenv_config.path }}"
+
+- name: Create rbenv plugins folder
+  file:
+    path: "{{ ruby__rbenv_config.path }}/plugins"
+    state: directory
+  register: ruby__rbenv_plugins_config
+
+- name: Install rbenv plugins
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ ruby__rbenv_plugins_config.path }}/{{ item.name }}"
+  with_items: "{{ ruby__rbenv_config.plugins }}"
+
+- import_tasks: ../common/tasks/link-config-files.yml
+  vars:
+    linked_files: "{{ ruby__linked_files }}"
+
+- name: Create {{ ruby__default_gems_config }} file
   template:
     src: default-gems.j2
-    dest: "~/.rbenv/default-gems"
+    dest: "{{ ruby__default_gems_config }}"
 
 - name: Install Ruby versions
-  command: "rbenv install {{ item }}"
-  args:
-    creates: "~/.rbenv/versions/{{ item }}"
-  with_items: "{{ ruby_versions }}"
+  shell: "{{ lookup('env', 'SHELL') }} -lc '{{ ruby__rbenv_config.path }}/bin/rbenv install --skip-existing {{ item }}'"
+  register: ruby__install_ruby_result
+  changed_when: ruby__install_ruby_result.stdout != ''
+  with_items: "{{ ruby__versions }}"
 
 - name: Set global Ruby version
-  command: "rbenv global {{ ruby_global_version }}"
+  command: "{{ lookup('env', 'SHELL') }} -lc '{{ ruby__rbenv_config.path }}/bin/rbenv global {{ ruby__global_version }}'"
   changed_when: false

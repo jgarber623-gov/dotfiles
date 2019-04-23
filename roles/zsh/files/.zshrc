@@ -59,7 +59,7 @@ ZSH_THEME="jgarber"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  brew bundler docker git marked2
+  bundler git
 )
 
 source $ZSH/oh-my-zsh.sh

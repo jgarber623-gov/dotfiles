@@ -14,11 +14,4 @@ else
   echo '✓ Ansible already installed.'
 fi
 
-if [[ ! `which brew` ]]; then
-  echo '=> Installing Homebrew...'
-  $(which ruby) -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-  echo '✓ Homebrew already installed.'
-fi
-
 echo '=> Bootstrap script finished.'

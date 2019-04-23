@@ -1,23 +1,18 @@
-- name: Install ZSH with Homebrew
-  homebrew:
-    name: zsh
-    state: latest
+- import_tasks: ../common/tasks/apt.yml
+  vars:
+    packages: "{{ zsh__apt_packages }}"
 
 - name: Change shell to ZSH
   user:
     name: "{{ ansible_user }}"
-    shell: /usr/local/bin/zsh
+    shell: /bin/zsh
   become: yes
 
 - name: Install oh-my-zsh
   git:
-    repo: https://github.com/robbyrussell/oh-my-zsh.git
-    dest: "~/.oh-my-zsh"
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: "{{ zsh__config_path }}"
 
-- name: Link configuration files
-  file:
-    src: "{{ role_path }}/files/{{ item }}"
-    dest: "~/{{ item }}"
-    state: link
-    force: yes
-  with_items: "{{ zsh_linked_files }}"
+- import_tasks: ../common/tasks/link-config-files.yml
+  vars:
+    linked_files: "{{ zsh__linked_files }}"

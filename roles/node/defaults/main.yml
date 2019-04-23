@@ -1,14 +1,24 @@
-node_homebrew_packages:
-  - node
+node__apt_signing_keys:
+  - https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+  - https://dl.yarnpkg.com/debian/pubkey.gpg
+
+node__apt_repositories:
+  - repo: deb https://deb.nodesource.com/node_11.x disco main
+    filename: nodesource
+  - repo: deb-src https://deb.nodesource.com/node_11.x disco main
+    filename: nodesource
+  - repo: deb https://dl.yarnpkg.com/debian stable main
+    filename: yarn
+
+node__apt_packages:
+  - nodejs
   - yarn
 
-node_linked_files:
-  - .npmrc
-
-node_global_packages:
+node__npm_packages:
+  - axe-cli
   - bower
   - fast-cli
-  - npm
+  - fx
   - pa11y
   - svgo
   - vtop

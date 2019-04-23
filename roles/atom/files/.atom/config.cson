@@ -3,6 +3,7 @@
     customFileTypes:
       "source.json": [
         "remarkrc"
+        "sonarwhalrc"
       ]
       "source.nginx": [
         "conf.erb"
@@ -10,10 +11,6 @@
       "source.ruby": [
         "rb.erb"
         "simplecov"
-      ]
-      "source.ruby.chef": [
-        "Cheffile"
-        "Cheffile.lock"
       ]
       "source.ruby.gemfile": [
         "Gemfile.lock"
@@ -25,7 +22,6 @@
       ]
       "source.yaml": [
         "gemrc"
-        "reek"
       ]
       "text.html.ruby": [
         "html.erb"
@@ -51,7 +47,7 @@
     packagesWithKeymapsDisabled: [
       "emmet"
     ]
-    projectHome: "/Users/jason/Developer"
+    projectHome: "/home/jason/Developer"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -59,7 +55,7 @@
     ]
     titleBar: "custom-inset"
   editor:
-    fontFamily: "Monaco"
+    fontSize: 15
     lineHeight: 1.6
     scrollPastEnd: true
     showInvisibles: true
@@ -86,9 +82,6 @@
     useGitHubStyle: true
   "nord-atom-ui":
     darkerFormFocusEffect: true
-  "package-sync":
-    createOnChange: true
-    forceOverwrite: true
   pigments:
     markerType: "native-dot"
     mergeColorDuplicates: true

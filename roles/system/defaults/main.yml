@@ -1,0 +1,18 @@
+system__apt_packages:
+  - curl
+  - dnsutils
+  - git
+  - htop
+  - iputils-ping
+  - jq
+  - nano
+  - nmap
+  - pandoc
+  - tmux
+  - wget
+
+system__linked_files:
+  - .gitconfig
+  - .gitignore
+  - .remarkrc
+  - .tmux.conf

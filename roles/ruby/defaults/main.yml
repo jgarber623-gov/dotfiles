@@ -1,18 +1,41 @@
-ruby_homebrew_packages:
-  - rbenv
-  - rbenv-default-gems
-  - ruby-build
+ruby__apt_packages:
+  - autoconf
+  - bison
+  - build-essential
+  - libssl-dev
+  - libyaml-dev
+  - libreadline-dev
+  - zlib1g-dev
+  - libncurses5-dev
+  - libffi-dev
+  - libgdbm3
+  - libgdbm-dev
 
-ruby_linked_files:
+ruby__bundler_config_path: "{{ lookup('env', 'HOME') }}/.bundle"
+
+ruby__rbenv_config:
+  path: "{{ lookup('env', 'HOME') }}/.rbenv"
+  repo: https://github.com/rbenv/rbenv
+  plugins:
+    - name: ruby-build
+      repo: https://github.com/rbenv/ruby-build
+    - name: rbenv-default-gems
+      repo: https://github.com/rbenv/rbenv-default-gems
+
+ruby__linked_files:
   - .bundle/config
   - .gemrc
 
-ruby_global_version: 2.5.1
+ruby__default_gems_config: "{{ ruby__rbenv_config.path }}/default-gems"
 
-ruby_versions:
-  - "{{ ruby_global_version }}"
-
-ruby_default_gems:
+ruby__default_gems:
   - bundler
   - bundler-audit
   - travis
+
+ruby__global_version: 2.5.5
+
+ruby__versions:
+  - "{{ ruby__global_version }}"
+  - 2.4.6
+  - 2.6.2
