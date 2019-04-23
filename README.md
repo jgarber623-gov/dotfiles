@@ -4,16 +4,17 @@ This is how I work.
 
 ## Installation
 
-First, open up Terminal.app and install Xcode Command Line Tools:
+First, make sure that the necessary dependencies are installed:
 
 ```sh
-xcode-select --install
+sudo apt update
+sudo apt install build-essential
 ```
 
 Then, clone this repository and run the following commands:
 
 ```sh
-git clone -b macbook-pro git@github.com:jgarber623/dotfiles ~/.dotfiles
+git clone -b ubuntu git@github.com:jgarber623-gov/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 make bootstrap
 make provision
