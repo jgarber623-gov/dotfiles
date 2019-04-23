@@ -17,9 +17,8 @@
 
 - name: Install packages with APT
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: latest
     update_cache: yes
-  with_items: "{{ packages }}"
   when: packages is defined
   become: yes
