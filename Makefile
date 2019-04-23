@@ -4,7 +4,7 @@ all: bootstrap provision
 
 bootstrap:
 	@echo '=> Running bootstrap script...'
-	@sh ./scripts/bootstrap.sh
+	./scripts/bootstrap.sh
 
 provision:
 	@echo '=> Running provisioning scripts with Ansible...'
