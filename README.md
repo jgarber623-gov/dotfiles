@@ -1,6 +1,6 @@
-# jgarber623's dotfiles
+# jgarber623-gov's dotfiles
 
-Check out [this repo's branches](https://github.com/jgarber623/dotfiles/branches) for device-specific configurations.
+Check out [this repo's branches](https://github.com/jgarber623-gov/dotfiles/branches) for device-specific configurations.
 
 ## Acknowledgments
 
