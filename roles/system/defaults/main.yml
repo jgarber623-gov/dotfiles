@@ -7,6 +7,7 @@ system__apt_packages:
   - iputils-ping
   - jq
   - libnss3-tools
+  - libpq-dev
   - nano
   - nmap
   - opensc
