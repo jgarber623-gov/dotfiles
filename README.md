@@ -1,4 +1,4 @@
-# jgarber623's dotfiles
+# jgarber623-gov's dotfiles
 
 This is how I work.
 
@@ -19,6 +19,14 @@ cd ~/.dotfiles
 make bootstrap
 make provision
 ```
+
+To expose certificates on a hardware device to Chrome, issue the following command:
+
+```sh
+modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/x86_64-linux-gnu/pkcs11/opensc-pkcs11.so
+```
+
+**Note:** Use `dpkg -L opensc-pkcs11` to easily locate the `opensc-pkcs11.so` file.
 
 ## Acknowledgments
 

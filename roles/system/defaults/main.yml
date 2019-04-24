@@ -6,12 +6,17 @@ system__apt_packages:
   - htop
   - iputils-ping
   - jq
+  - libnss3-tools
   - nano
   - nmap
+  - opensc
   - pandoc
+  - pcsc-tools
   - tmux
   - wget
+  - yubico-piv-tool
   - yubikey-manager
+  - yubikey-personalization
   - zsh
 
 system__zsh_config_path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
