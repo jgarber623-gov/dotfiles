@@ -1,5 +1,6 @@
 system__apt_packages:
   - curl
+  - dconf-editor
   - dnsutils
   - git
   - htop
