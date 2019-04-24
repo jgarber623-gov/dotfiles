@@ -11,7 +11,9 @@ system__apt_packages:
   - nmap
   - opensc
   - pandoc
+  - postgresql
   - pcsc-tools
+  - redis
   - tmux
   - wget
   - yubico-piv-tool
