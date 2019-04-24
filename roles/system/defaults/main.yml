@@ -10,9 +10,19 @@ system__apt_packages:
   - pandoc
   - tmux
   - wget
+  - zsh
+
+system__zsh_config_path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
 
 system__linked_files:
   - .gitconfig
   - .gitignore
+  - .oh-my-zsh/custom/aliases.zsh
+  - .oh-my-zsh/custom/functions.zsh
+  - .oh-my-zsh/custom/npm.zsh
+  - .oh-my-zsh/custom/rbenv.zsh
+  - .oh-my-zsh/custom/travis.zsh
+  - .oh-my-zsh/custom/themes/jgarber.zsh-theme
   - .remarkrc
   - .tmux.conf
+  - .zshrc

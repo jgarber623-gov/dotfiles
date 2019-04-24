@@ -2,6 +2,17 @@
   vars:
     packages: "{{ system__apt_packages }}"
 
+- name: Change shell to ZSH
+  user:
+    name: "{{ ansible_user }}"
+    shell: /bin/zsh
+  become: yes
+
+- name: Install oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: "{{ system__zsh_config_path }}"
+
 - import_tasks: ../common/tasks/link-config-files.yml
   vars:
     linked_files: "{{ system__linked_files }}"
