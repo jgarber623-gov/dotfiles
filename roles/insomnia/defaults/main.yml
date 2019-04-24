@@ -1,0 +1,9 @@
+insomnia__apt_signing_keys:
+  - https://insomnia.rest/keys/debian-public.key.asc
+
+insomnia__apt_repositories:
+  - repo: deb https://dl.bintray.com/getinsomnia/Insomnia /
+    filename: insomnia
+
+insomnia__apt_packages:
+  - insomnia

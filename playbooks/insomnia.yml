@@ -1,0 +1,6 @@
+- name: Insomnia playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - ../roles/insomnia
