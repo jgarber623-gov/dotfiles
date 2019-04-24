@@ -11,6 +11,7 @@ system__apt_packages:
   - pandoc
   - tmux
   - wget
+  - yubikey-manager
   - zsh
 
 system__zsh_config_path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
