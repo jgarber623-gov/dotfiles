@@ -2,12 +2,14 @@ system__apt_packages:
   - curl
   - dconf-editor
   - dnsutils
+  - fonts-noto-color-emoji
   - git
   - htop
   - iputils-ping
   - jq
   - libnss3-tools
   - libpq-dev
+  - libsqlite3-dev
   - nano
   - nmap
   - opensc
@@ -15,6 +17,7 @@ system__apt_packages:
   - postgresql
   - pcsc-tools
   - redis
+  - sqlite3
   - tmux
   - wget
   - yubico-piv-tool
